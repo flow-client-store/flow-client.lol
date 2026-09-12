@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flow Store</title>
+  <meta name="description" content="Discover premium everyday essentials at flow-client.lol. High quality design, tracked express shipping, and 30-day money-back guarantee.">
+  <meta name="keywords" content="flow client, modern essentials, lifestyle products, tech gear, premium design">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="FLOW — Modern Everyday Essentials">
+  <meta property="og:description" content="Curated premium products built for modern living. Tracked express shipping worldwide.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://flow-client.lol">
+  
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <aside class="announcement-bar" id="announcementBar" aria-label="Special Offers">
+    <div class="announcement-bar__content">
+      <span>FREE TRACKED SHIPPING OVER €40</span>
+      <span class="announcement-bar__sep">•</span>
+      <span>CODE <strong class="promo-tag">FLOW10</strong> = 10% OFF</span>
+      <span class="announcement-bar__sep">•</span>
+      <span>30-DAY MONEY BACK, NO QUESTIONS</span>
+    </div>
+  </aside>
+
+  <!-- Sticky Header -->
+  <header class="header" id="header">
+    <nav class="nav container" aria-label="Main Navigation">
+      <a href="#" class="nav__logo" aria-label="Flow Client Home">
+        <span class="logo-text">FLOW<span class="logo-dot">.</span></span>
+      </a>
+
+      <ul class="nav__links" id="navLinks">
+        <li><a href="#products" class="nav-link">Shop</a></li>
+        <li><a href="#guarantee" class="nav-link">Why FLOW</a></li>
+
+        <li><a href="#reviews" class="nav-link">Reviews</a></li>
+        <li><a href="#faq" class="nav-link">FAQ</a></li>
+      </ul>
+
+      <div class="nav__actions">
+        <!-- Currency Switcher -->
+        <div class="currency-picker" id="currencyPicker">
+          <button class="currency-btn" id="currencyBtn" aria-label="Select Currency">
+            <span id="currentCurrencyLabel">EUR (€)</span>
+            <svg class="chevron-icon" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="currency-dropdown" id="currencyDropdown">
+            <button class="currency-option active" data-currency="EUR" data-symbol="€" data-rate="1">EUR (€)</button>
+            <button class="currency-option" data-currency="USD" data-symbol="$" data-rate="1.08">USD ($)</button>
+            <button class="currency-option" data-currency="GBP" data-symbol="£" data-rate="0.85">GBP (£)</button>
+          </div>
+        </div>
+
+        <!-- Search Button -->
+        <button class="nav__icon" id="searchBtn" aria-label="Search store">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+
+        <!-- Cart Button -->
+        <button class="nav__icon nav__cart-btn" id="cartBtn" aria-label="Open Cart">
+          <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+
+        <!-- Mobile Burger Menu -->
+        <button class="nav__burger" id="burgerBtn" aria-label="Toggle navigation menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero__glow"></div>
+    <div class="container hero__container">
+      <div class="hero__badge">
+        <span class="badge-dot"></span>
+        <span>Official Store • flow-client.lol</span>
+      </div>
+      <h1 class="hero__title">
+        Stuff that actually <span class="text-gradient">works.</span>
+      </h1>
+      <p class="hero__subtitle">
+        No fluff, no gimmicks. Just solid products that look good and last. Tracked shipping on every order, 30-day returns if it's not your vibe.
+      </p>
+      
+      <div class="hero__actions">
+        <a href="#products" class="btn btn--primary">
+          <span>Browse Products</span>
+          <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="#faq" class="btn btn--secondary">
+          <span>Common Questions</span>
+        </a>
+      </div>
+
+      <!-- Trust Badges Under Hero -->
+      <div class="hero__trust-strip">
+        <div class="trust-pill">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          <span>Secure Checkout</span>
+        </div>
+        <div class="trust-pill">
+          <svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 7"/></svg>
+          <span>30-Day Returns</span>
+        </div>
+        <div class="trust-pill">
+          <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8l5 3-5 3V8z"/></svg>
+          <span>Tracked Shipping</span>
+        </div>
+        <div class="trust-pill">
+          <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          <span>Fast Support</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Products Section -->
+  <section class="section" id="products">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-tag">What We Sell</div>
+        <h2 class="section-title">Everything in one place</h2>
+        <p class="section-desc">No random stuff. Everything here is quality-checked, fast to ship, and easy to return.</p>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="category-tabs" id="categoryTabs" role="tablist">
+        <button class="tab-btn active" data-category="all" role="tab" aria-selected="true">All Products</button>
+        <button class="tab-btn" data-category="bestseller" role="tab" aria-selected="false">Best Sellers</button>
+        <button class="tab-btn" data-category="tech" role="tab" aria-selected="false">Tech & Gear</button>
+        <button class="tab-btn" data-category="lifestyle" role="tab" aria-selected="false">Lifestyle</button>
+        <button class="tab-btn" data-category="home" role="tab" aria-selected="false">Everyday Home</button>
+      </div>
+
+      <!-- Dynamic Products Grid -->
+      <div class="products-grid" id="productsGrid">
+        <!-- Products will be dynamically populated from app.js with exact requested name & description format -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Value Propositions / Brand Guarantees -->
+  <section class="section section--features" id="guarantee">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-tag">How It Works</div>
+        <h2 class="section-title">Everything You Need to Know</h2>
+        <p class="section-desc">Quick rundown on shipping, returns, quality, and support. All in one place.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8l5 3-5 3V8z"/></svg>
+          </div>
+          <h3 class="feature-title">Tracked Shipping</h3>
+          <p class="feature-text">Every order gets a tracking number. Ships in 1-2 days, arrives in 3-7 depending on where you are. Free over €40.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 class="feature-title">30-Day Returns</h3>
+          <p class="feature-text">Don't like it? Send it back within 30 days. Full refund, no drama. Damaged stuff gets replaced for free.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <h3 class="feature-title">Quality Checked</h3>
+          <p class="feature-text">We test every product before it ships. If something's off, we catch it so you don't have to deal with it.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3 class="feature-title">Real Support</h3>
+          <p class="feature-text">Hit us up at support@flow-client.lol — we actually reply. Usually within a few hours, not days.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Live Order Tracker Simulation -->
+  <section class="section section--tracker" id="tracker">
+    <div class="container">
+      <div class="tracker-card">
+        <div class="tracker-card__header">
+          <div class="section-tag">Self-Service Portal</div>
+          <h2 class="tracker-title">Track Your Shipment</h2>
+          <p class="tracker-desc">Enter your order confirmation number or email to view real-time transit status.</p>
+        </div>
+
+        <form class="tracker-form" id="trackerForm">
+          <div class="tracker-input-group">
+            <svg class="tracker-input-icon" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8l5 3-5 3V8z"/></svg>
+            <input type="text" id="trackOrderInput" placeholder="e.g. FLOW-84920 or your email" required>
+          </div>
+          <button type="submit" class="btn btn--primary">
+            <span>Track Order</span>
+            <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+        </form>
+
+        <div class="tracker-result" id="trackerResult" style="display: none;">
+          <!-- Injected dynamically by JS -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Verified Customer Reviews Section -->
+  <section class="section section--reviews" id="reviews">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-tag">Reviews</div>
+        <h2 class="section-title">Don't Take Our Word For It</h2>
+        <div class="reviews-summary-badge">
+          <div class="stars">★★★★★</div>
+          <span>4.9 avg from 2,400+ orders</span>
+        </div>
+      </div>
+
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-card__header">
+            <div class="review-avatar">ML</div>
+            <div>
+              <div class="review-author">Marcus L. <span class="verified-tag">✓ Verified</span></div>
+              <div class="review-stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="review-text">"Ngl I was skeptical at first but this thing came in like 5 days with full tracking. Quality is lowkey way better than what I expected for the price. W purchase fr."</p>
+          <div class="review-date">2 days ago</div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-card__header">
+            <div class="review-avatar">SK</div>
+            <div>
+              <div class="review-author">Sophie K. <span class="verified-tag">✓ Verified</span></div>
+              <div class="review-stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="review-text">"Had a question about my order and their support actually replied same day. Product looks exactly like the pictures. Solid experience, would order again."</p>
+          <div class="review-date">5 days ago</div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-card__header">
+            <div class="review-avatar">DR</div>
+            <div>
+              <div class="review-author">David R. <span class="verified-tag">✓ Verified</span></div>
+              <div class="review-stars">★★★★★</div>
+            </div>
+          </div>
+          <p class="review-text">"Clean packaging, no random stickers or weird logos. Just the product in a nice box. Works perfectly out of the box. This is how online shopping should be."</p>
+          <div class="review-date">1 week ago</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--faq" id="faq">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title">Quick Answers</h2>
+        <p class="section-desc">The stuff people always ask — all in one spot.</p>
+      </div>
+
+      <div class="faq-accordion" id="faqAccordion">
+        <!-- Item 1 -->
+        <div class="faq-item active">
+          <button class="faq-question" aria-expanded="true">
+            <span>How long until I get my order?</span>
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-answer">
+            <p>We ship within 1-2 days. After that it's usually <strong>3 to 7 business days</strong> depending on where you live. Europe is fastest, US/Canada takes a bit longer. You get a tracking number by email as soon as it ships.</p>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Where's my tracking?</span>
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-answer">
+            <p>Check your email (and spam folder). You get an automatic tracking email once your order ships. If you still can't find it, just email us at <a href="mailto:support@flow-client.lol">support@flow-client.lol</a> and we'll sort it out.</p>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>What if I don't like it? Can I return it?</span>
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-answer">
+            <p>Yeah, you've got <strong>30 days</strong> to return anything. If it arrives broken or wrong, we'll send a new one for free or give you a full refund. No arguing, no hoops to jump through. Just hit up <a href="mailto:support@flow-client.lol">support@flow-client.lol</a>.</p>
+          </div>
+        </div>
+
+        <!-- Item 4 -->
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>What can I pay with?</span>
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-answer">
+            <p>Pretty much everything — Visa, Mastercard, Amex, Apple Pay, Google Pay, and PayPal. It's all SSL encrypted so your card info is safe.</p>
+          </div>
+        </div>
+
+        <!-- Item 5 -->
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Can I cancel or change my order?</span>
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-answer">
+            <p>If you're fast — yes. Email us at <a href="mailto:support@flow-client.lol">support@flow-client.lol</a> within a couple hours after ordering and we can usually fix it before it ships. After that it's trickier but we'll still try to help.</p>
+          </div>
+        </div>
+
+        <!-- Item 6 -->
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Is my data safe?</span>
+            <span class="faq-icon"></span>
+          </button>
+          <div class="faq-answer">
+            <p>100%. We don't store your card details, we don't sell your info, and we follow GDPR rules. Your data stays between you and us — that's it.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Signup with instant coupon code -->
+  <section class="section section--newsletter" id="newsletter">
+    <div class="container">
+      <div class="newsletter-box">
+        <div class="newsletter-tag">Deals</div>
+        <h2 class="newsletter-title">Get 15% Off Your First Order</h2>
+        <p class="newsletter-desc">Drop your email and we'll send you a discount code right now. We also send early access to new drops and sales — no spam, promise.</p>
+        
+        <form class="newsletter-form" id="newsletterForm">
+          <input type="email" id="newsletterEmail" placeholder="your@email.com" required aria-label="Email address">
+          <button type="submit" class="btn btn--primary">
+            <span>Get Code</span>
+          </button>
+        </form>
+
+        <div class="newsletter-coupon" id="newsletterCoupon" style="display: none;">
+          <div class="coupon-box">
+            <span>Your 15% OFF Code:</span>
+            <strong id="promoCodeText">FLOW15</strong>
+            <button type="button" class="btn-copy-code" id="btnCopyCode">Copy Code</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer with Legal Pages & Copyright -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand Column -->
+        <div class="footer-col footer-col--brand">
+          <a href="#" class="nav__logo">
+            <span class="logo-text">FLOW<span class="logo-dot">.</span></span>
+          </a>
+          <p class="footer-brand-text">
+            Simple products, fair prices, fast shipping. That's pretty much it.
+          </p>
+          <div class="footer-domain-badge">
+            <span class="domain-dot"></span>
+            <span>Official Domain: <strong>flow-client.lol</strong></span>
+          </div>
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Shop & Explore</h4>
+          <ul class="footer-links">
+            <li><a href="#products">All Products</a></li>
+            <li><a href="#products" data-cat-trigger="bestseller">Best Sellers</a></li>
+            <li><a href="#products" data-cat-trigger="tech">Tech & Gear</a></li>
+
+            <li><a href="#reviews">Customer Reviews</a></li>
+          </ul>
+        </div>
+
+        <!-- Customer Care -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Customer Support</h4>
+          <ul class="footer-links">
+            <li><a href="#faq">Help Center & FAQ</a></li>
+            <li><a href="#" class="legal-trigger" data-policy="shipping">Shipping & Delivery</a></li>
+            <li><a href="#" class="legal-trigger" data-policy="returns">Returns & Refunds</a></li>
+            <li><a href="#" class="legal-trigger" data-policy="contact">Contact Support</a></li>
+            <li><a href="#" id="openCookieSettings">Cookie Preferences</a></li>
+          </ul>
+        </div>
+
+        <!-- Legal & Compliance -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Legal & Compliance</h4>
+          <ul class="footer-links">
+            <li><a href="#" class="legal-trigger" data-policy="terms">Terms of Service</a></li>
+            <li><a href="#" class="legal-trigger" data-policy="privacy">Privacy Policy</a></li>
+            <li><a href="#" class="legal-trigger" data-policy="cookies">Cookie Policy</a></li>
+            <li><a href="#" class="legal-trigger" data-policy="disclaimer">Compliance & Disclaimer</a></li>
+            <li><a href="#" class="legal-trigger" data-policy="warranty">Warranty Policy</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Trust Bar & Payment Icons -->
+      <div class="footer-payments-bar">
+        <div class="payment-badges-wrap">
+          <span class="payment-badge">VISA</span>
+          <span class="payment-badge">Mastercard</span>
+          <span class="payment-badge">Amex</span>
+          <span class="payment-badge">Apple Pay</span>
+          <span class="payment-badge">Google Pay</span>
+          <span class="payment-badge">PayPal</span>
+          <span class="payment-badge">SSL Secure</span>
+        </div>
+      </div>
+
+      <!-- Copyright & Bottom Disclaimer -->
+      <div class="footer-bottom">
+        <p class="footer-copy">
+          © 2026 <strong>flow-client.lol</strong> (FLOW). All rights reserved. Registered trademark.
+        </p>
+        <div class="footer-bottom-links">
+          <a href="#" class="legal-trigger" data-policy="privacy">Privacy</a>
+          <span>•</span>
+          <a href="#" class="legal-trigger" data-policy="terms">Terms</a>
+          <span>•</span>
+          <a href="#" class="legal-trigger" data-policy="returns">Refunds</a>
+          <span>•</span>
+          <a href="#" class="legal-trigger" data-policy="shipping">Shipping</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Slide-Out Shopping Cart Drawer -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping Cart">
+    <div class="cart-drawer__header">
+      <div class="cart-drawer__title-wrap">
+        <h3 class="cart-drawer__title">Your Shopping Cart</h3>
+        <span class="cart-drawer__badge" id="cartDrawerItemCount">0 items</span>
+      </div>
+      <button class="cart-drawer__close" id="cartClose" aria-label="Close Cart">✕</button>
+    </div>
+
+    <!-- Free Shipping Progress Meter -->
+    <div class="cart-shipping-progress" id="cartShippingProgress">
+      <div class="shipping-progress-text" id="shippingProgressText">
+        Add €40.00 more for <strong>FREE Express Shipping</strong>
+      </div>
+      <div class="shipping-progress-track">
+        <div class="shipping-progress-bar" id="shippingProgressBar" style="width: 0%;"></div>
+      </div>
+    </div>
+
+    <div class="cart-drawer__body" id="cartBody">
+      <!-- Dynamic cart items rendered by app.js -->
+    </div>
+
+    <div class="cart-drawer__footer" id="cartFooter">
+      <!-- Discount code promo input inside cart -->
+      <div class="cart-promo-row">
+        <input type="text" id="cartPromoInput" placeholder="Discount code (try FLOW10)">
+        <button type="button" id="cartApplyPromoBtn">Apply</button>
+      </div>
+      <div class="cart-promo-applied" id="cartPromoApplied" style="display: none;">
+        <span>Applied: <strong id="appliedPromoCode">FLOW10</strong> (-<span id="appliedDiscountAmount">€0.00</span>)</span>
+        <button type="button" id="removePromoBtn">✕</button>
+      </div>
+
+      <div class="cart-drawer__summary">
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <span id="cartSubtotal">€0.00</span>
+        </div>
+        <div class="summary-row" id="cartDiscountRow" style="display: none;">
+          <span>Discount</span>
+          <span class="discount-text" id="cartDiscountTotal">-€0.00</span>
+        </div>
+        <div class="summary-row">
+          <span>Tracked Shipping</span>
+          <span id="cartShipping">€4.99</span>
+        </div>
+        <div class="summary-row summary-row--total">
+          <span>Total</span>
+          <span id="cartTotal">€0.00</span>
+        </div>
+      </div>
+
+      <button class="btn btn--primary btn--checkout" id="cartCheckoutBtn">
+        <span>Proceed to Secure Checkout</span>
+        <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </button>
+
+      <div class="cart-security-badge">
+        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span>Guaranteed 256-Bit SSL Encrypted Checkout</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Quick View / Product Detail Modal -->
+  <div class="modal-overlay" id="quickViewOverlay">
+    <div class="modal-box modal-box--quickview" id="quickViewModal">
+      <button class="modal-close" id="quickViewClose" aria-label="Close modal">✕</button>
+      <div class="quickview-layout" id="quickViewContent">
+        <!-- Injected dynamically by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Interactive Legal Policies Modal -->
+  <div class="modal-overlay" id="legalModalOverlay">
+    <div class="modal-box modal-box--legal" id="legalModal">
+      <div class="legal-modal-header">
+        <h3 class="legal-modal-title" id="legalModalTitle">Legal Policy</h3>
+        <button class="modal-close" id="legalModalClose" aria-label="Close policy modal">✕</button>
+      </div>
+      <div class="legal-modal-body" id="legalModalBody">
+        <!-- Injected dynamically based on clicked policy -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Interactive Simulated Checkout Modal -->
+  <div class="modal-overlay" id="checkoutOverlay">
+    <div class="modal-box modal-box--checkout" id="checkoutModal">
+      <div class="checkout-modal-header">
+        <div class="checkout-brand">
+          <span>FLOW Checkout</span>
+        </div>
+        <button class="modal-close" id="checkoutClose">✕</button>
+      </div>
+
+      <div class="checkout-steps" id="checkoutSteps">
+        <div class="checkout-step-indicator active" id="stepIndicator1">1. Shipping</div>
+        <div class="checkout-step-indicator" id="stepIndicator2">2. Payment</div>
+        <div class="checkout-step-indicator" id="stepIndicator3">3. Confirmation</div>
+      </div>
+
+      <!-- Step 1: Shipping Info -->
+      <form class="checkout-form" id="checkoutFormStep1">
+        <h4 class="checkout-section-heading">Shipping Address</h4>
+        <div class="form-grid">
+          <div class="form-field form-field--full">
+            <label for="cEmail">Email Address</label>
+            <input type="email" id="cEmail" placeholder="your.name@example.com" required>
+          </div>
+          <div class="form-field">
+            <label for="cFirstName">First Name</label>
+            <input type="text" id="cFirstName" placeholder="Alex" required>
+          </div>
+          <div class="form-field">
+            <label for="cLastName">Last Name</label>
+            <input type="text" id="cLastName" placeholder="Morgan" required>
+          </div>
+          <div class="form-field form-field--full">
+            <label for="cAddress">Street Address</label>
+            <input type="text" id="cAddress" placeholder="123 Modern Boulevard, Apt 4B" required>
+          </div>
+          <div class="form-field">
+            <label for="cCity">City</label>
+            <input type="text" id="cCity" placeholder="Berlin" required>
+          </div>
+          <div class="form-field">
+            <label for="cZip">Postal Code</label>
+            <input type="text" id="cZip" placeholder="10115" required>
+          </div>
+          <div class="form-field form-field--full">
+            <label for="cCountry">Country</label>
+            <select id="cCountry" required>
+              <option value="DE">Germany</option>
+              <option value="FR">France</option>
+              <option value="UK">United Kingdom</option>
+              <option value="US">United States</option>
+              <option value="CA">Canada</option>
+              <option value="NL">Netherlands</option>
+              <option value="ES">Spain</option>
+              <option value="IT">Italy</option>
+              <option value="SE">Sweden</option>
+              <option value="CH">Switzerland</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="checkout-actions">
+          <button type="submit" class="btn btn--primary btn--full">Continue to Payment</button>
+        </div>
+      </form>
+
+      <!-- Step 2: Payment Simulation -->
+      <form class="checkout-form" id="checkoutFormStep2" style="display: none;">
+        <h4 class="checkout-section-heading">Payment Details</h4>
+        <div class="payment-method-selector">
+          <label class="payment-method active">
+            <input type="radio" name="paymentType" value="card" checked>
+            <span>Credit / Debit Card (SSL Secure)</span>
+          </label>
+          <label class="payment-method">
+            <input type="radio" name="paymentType" value="paypal">
+            <span>PayPal Express</span>
+          </label>
+          <label class="payment-method">
+            <input type="radio" name="paymentType" value="applepay">
+            <span>Apple Pay / Google Pay</span>
+          </label>
+        </div>
+
+        <div class="card-inputs" id="cardInputs">
+          <div class="form-field form-field--full">
+            <label for="cCardNumber">Card Number</label>
+            <input type="text" id="cCardNumber" placeholder="4242 •••• •••• 4242" maxlength="19" required>
+          </div>
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="cExp">Expiry Date</label>
+              <input type="text" id="cExp" placeholder="MM/YY" maxlength="5" required>
+            </div>
+            <div class="form-field">
+              <label for="cCVC">Security Code (CVC)</label>
+              <input type="text" id="cCVC" placeholder="123" maxlength="4" required>
+            </div>
+          </div>
+        </div>
+
+        <div class="checkout-summary-box">
+          <div class="summary-line">
+            <span>Total Payable:</span>
+            <strong id="checkoutFinalTotal">€0.00</strong>
+          </div>
+        </div>
+
+        <div class="checkout-actions">
+          <button type="button" class="btn btn--secondary" id="checkoutBackToStep1">Back</button>
+          <button type="submit" class="btn btn--primary" id="checkoutPlaceOrderBtn">Complete Order & Pay</button>
+        </div>
+      </form>
+
+      <!-- Step 3: Confirmation -->
+      <div class="checkout-confirmed" id="checkoutConfirmed" style="display: none;">
+        <div class="confirm-icon">✓</div>
+        <h3 class="confirm-title">Order Confirmed!</h3>
+        <p class="confirm-sub">Thank you for your purchase from <strong>flow-client.lol</strong>. We have sent a confirmation email with full receipt & tracking information.</p>
+        
+        <div class="order-id-badge">
+          Order Number: <strong id="confirmedOrderNumber">FLOW-98412</strong>
+        </div>
+
+        <button type="button" class="btn btn--primary" id="checkoutDoneBtn">Continue Shopping</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Search Modal -->
+  <div class="modal-overlay" id="searchOverlay">
+    <div class="modal-box modal-box--search" id="searchModal">
+      <div class="search-input-wrap">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="searchInput" placeholder="Search products, gear, essentials..." autocomplete="off">
+        <button class="modal-close" id="searchClose">✕</button>
+      </div>
+      <div class="search-results-list" id="searchResultsList">
+        <div class="search-hint">Type above to search our curated catalog...</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Real Cookie Consent Banner -->
+  <aside class="cookie-banner" id="cookieBanner" role="dialog" aria-live="polite" aria-label="Cookie Consent">
+    <div class="cookie-banner__inner">
+      <div class="cookie-banner__icon">🍪</div>
+      <div class="cookie-banner__content">
+        <h4 class="cookie-banner__heading">We value your privacy</h4>
+        <p class="cookie-banner__text">
+          We use functional and analytics cookies on <strong>flow-client.lol</strong> to store your cart, preserve currency preferences, and deliver a seamless browsing experience. Learn more in our <a href="#" class="legal-trigger" data-policy="cookies">Cookie Policy</a>.
+        </p>
+      </div>
+      <div class="cookie-banner__actions">
+        <button class="btn btn--cookie-decline" id="cookieDecline">Decline Non-Essential</button>
+        <button class="btn btn--cookie-accept" id="cookieAccept">Accept All Cookies</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Interactive Toast Notification -->
+  <div class="toast" id="toast" role="status" aria-live="polite">
+    <span class="toast__icon">✓</span>
+    <span id="toastText">Item added to cart</span>
+  </div>
+
+  <!-- Scroll-to-Top Button -->
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll back to top">
+    <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <!-- Main Store Script -->
+  <script src="app.js"></script>
+</body>
+</html>
